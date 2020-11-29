@@ -31,12 +31,12 @@
     }
     &Warning{
       background: theme('colors.yellow.300');
-      color: theme('colors.orange.500');
+      color: theme('colors.yellow.500');
 
       a,
       a:hover {
-        color: theme('colors.orange.500');
-        fill: theme('colors.orange.500');
+        color: theme('colors.yellow.500');
+        fill: theme('colors.yellow.500');
       }
     }
     &Info{

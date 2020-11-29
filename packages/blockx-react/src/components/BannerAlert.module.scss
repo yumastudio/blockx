@@ -24,11 +24,11 @@
       }
     }
     &Warning{
-      background-color: theme('colors.sorbet.200');
-      color: theme('colors.orange.500');
+      background-color: theme('colors.yellow.200');
+      color: theme('colors.yellow.500');
 
       a {
-        color: theme('colors.orange.500');
+        color: theme('colors.yellow.500');
       }
     }
     &Caution{
