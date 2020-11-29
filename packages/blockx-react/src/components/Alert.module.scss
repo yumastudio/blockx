@@ -1,3 +1,5 @@
+@tailwind components;
+
 .alert {
   display: flex;
   font-size: theme('fontSize.body-3');
@@ -24,23 +26,16 @@
 
   &State{
     &Success{
-      background: theme('colors.green.default');
+      @apply .alertStateSuccess;
     }
     &Caution{
-      background: theme('colors.red.default');
+      @apply .alertStateCaution;
     }
     &Warning{
-      background: theme('colors.yellow.300');
-      color: theme('colors.yellow.500');
-
-      a,
-      a:hover {
-        color: theme('colors.yellow.500');
-        fill: theme('colors.yellow.500');
-      }
+      @apply .alertStateWarning;
     }
     &Info{
-      background: theme('colors.blue.default');
+      @apply .alertStateInfo;
     }
   }
 }
