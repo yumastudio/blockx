@@ -1,6 +1,6 @@
 {
   "name": "@yumastudio/blockx-react",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "React components for building UIs with Blockx.",
   "homepage": "https://github.com/yumastudio/blockx/tree/master/packages/blockx-react",
   "repository": {
@@ -24,7 +24,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "babel.config.json",
+    "src",
+    "babel.config.js",
     "package-dry.json",
     "postcss.config.js",
     "rollup.config.js",

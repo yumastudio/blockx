@@ -1,12 +1,12 @@
-import path from 'path'
-import babel from '@rollup/plugin-babel'
-import typescript from 'rollup-plugin-typescript2'
-import commonjs from "@rollup/plugin-commonjs"
-import postcss from "rollup-plugin-postcss"
-import copy from 'rollup-plugin-cpy';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+const path = require('path')
+const babel = require('@rollup/plugin-babel').default
+const typescript = require('rollup-plugin-typescript2')
+const commonjs = require("@rollup/plugin-commonjs")
+const postcss = require("rollup-plugin-postcss")
+const copy = require('rollup-plugin-cpy')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
 
-import { dependencies, peerDependencies } from './package.json';
+const { dependencies, peerDependencies } = require('./package.json')
 
 const formats = [{
   name: 'es',
@@ -54,7 +54,7 @@ const formats = [{
     peerDependencies[id]
 }]
 
-export default formats.map(format => ({
+module.exports = formats.map(format => ({
   input: './src/index.tsx',
   plugins: format.plugins,
   output: {
