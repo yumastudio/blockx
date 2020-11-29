@@ -7,7 +7,6 @@ const cheerio = require('cheerio')
 const trimNewlines = require('trim-newlines')
 const yargs = require('yargs')
 const merge = require('lodash.merge')
-const keywords = require('../keywords.json')
 
 // This script generates a JSON file that contains
 // information about input SVG files.
@@ -96,7 +95,6 @@ const icons = svgFilepaths.map(filepath => {
 
     return {
       name,
-      keywords: keywords[name] || [],
       width: svgWidth,
       height: svgHeight,
       path: svgPath
@@ -124,7 +122,6 @@ const iconsByName = icons.reduce(
     merge(acc, {
       [icon.name]: {
         name: icon.name,
-        keywords: icon.keywords,
         heights: {
           [icon.height]: {
             width: icon.width,
