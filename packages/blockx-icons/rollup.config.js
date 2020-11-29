@@ -1,11 +1,11 @@
-import babel from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
+const babel = require('@rollup/plugin-babel').default
+const commonjs = require('@rollup/plugin-commonjs')
 
-import { peerDependencies } from './package.json'
+const pkg = require('./package.json')
 
 const formats = ['esm', 'umd']
 
-export default {
+module.exports = {
   input: 'src/index.js',
   plugins: [
     babel(),
@@ -20,6 +20,6 @@ export default {
     }
   })),
   external: [
-    ...Object.keys(peerDependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
   ]
 }
