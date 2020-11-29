@@ -113,7 +113,7 @@ const UserAvatar = forwardRef<HTMLElement, UserAvatarPropsType>(
           />
         ) : (
           <span
-            className={`${styles.initials} ${styles.circle} ${getClassName(initial)}`}
+            className={`${styles.initials} ${styles.circle} ${getClassName(initials)}`}
             title={fullName && `Avatar for ${fullName}`}
           >
             {initials}

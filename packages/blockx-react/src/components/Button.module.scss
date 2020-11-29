@@ -79,31 +79,31 @@ $button-border-width: 2px;
 
   &ThemePrimary {
     color: theme('colors.white');
-    background-color: theme('colors.orange.default');
-    border-color: theme('colors.orange.default');
+    background-color: theme('colors.blue.default');
+    border-color: theme('colors.blue.default');
 
     &[disabled] {
-      background-color: theme('colors.orange.300');
-      border-color: theme('colors.orange.300');
+      background-color: theme('colors.blue.300');
+      border-color: theme('colors.blue.300');
     }
 
     &:focus {
-      background-color: theme('colors.orange.500');
-      border-color: theme('colors.orange.500');
+      background-color: theme('colors.blue.500');
+      border-color: theme('colors.blue.500');
     }
   }
 
   &ThemeSecondary {
-    color: theme('colors.orange.default');
+    color: theme('colors.blue.default');
     background-color: theme('colors.white');
     border-color: theme('colors.gray.default');
 
     &[disabled] {
-      color: theme('colors.orange.300');
+      color: theme('colors.blue.300');
     }
 
     &:focus {
-      border-color: theme('colors.orange.500');
+      border-color: theme('colors.blue.500');
     }
   }
 

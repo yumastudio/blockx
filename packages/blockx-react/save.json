@@ -38,8 +38,8 @@
     "typecheck": "tsc -w"
   },
   "dependencies": {
-    "@yumastudio/blockx-icons": "0.0.5",
-    "@yumastudio/blockx-scss": "0.2.1",
+    "@yumastudio/blockx-icons": "0.0.6",
+    "@yumastudio/blockx-scss": "0.2.2",
     "@popperjs/core": "2.5.4",
     "classnames": "2.2.6",
     "intersection-observer": "0.11.0",
@@ -74,17 +74,15 @@
     "rollup-plugin-postcss": "3.1.8",
     "rollup-plugin-typescript2": "0.29.0",
     "tailwindcss": "1.9.6",
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "@rollup/plugin-node-resolve": "^10.0.0"
   },
   "peerDependencies": {
-    "@yumastudio/blockx-icons": "0.0.5",
-    "@yumastudio/blockx-scss": "0.2.1",
     "@popperjs/core": "2.5.4",
+    "@yumastudio/blockx-scss": "0.2.2",
     "classnames": "2.2.6",
-    "intersection-observer": "0.11.0",
     "lodash": "4.17.20",
     "no-scroll": "2.1.1",
-    "object-fit-images": "3.2.4",
     "react": ">=16",
     "react-dom": ">=16",
     "react-onclickoutside": "6.9.0",

@@ -2,12 +2,48 @@
   "transparent": "transparent",
   "white": "#fff",
   "black": {
-    "default": "rgb(47, 48, 51)",
-    "300": "rgb(103, 109, 115)"
+    "default": "#2f3033",
+    "300": "#676d73"
   },
   "gray": {
-    "default": "rgb(211, 212, 213)",
-    "300": "rgb(233, 236, 237)",
-    "200": "rgb(250, 250, 250)"
+    "default": "#d3d4d5",
+    "300": "#e9eced",
+    "200": "#fafafa"
+  },
+  "blue": {
+    "500": "#005979",
+    "default": "#009fd9",
+    "300": "#b3ebff",
+    "200": "#eaf6fa"
+  },
+  "red": {
+    "500": "#7d0d10",
+    "default": "#ff5a5f",
+    "300": "#ffd9d9",
+    "200": "#ffeff0"
+  },
+  "indigo": {
+    "500": "#383c80",
+    "default": "#5968e2",
+    "300": "#cce1ff",
+    "200": "#e8f1fd"
+  },
+  "purple": {
+    "500": "#492782",
+    "default": "#8d56eb",
+    "300": "#dfccff",
+    "200": "#f5efff"
+  },
+  "green": {
+    "500": "#054e33",
+    "default": "#2db783",
+    "300": "#c6f7da",
+    "200": "#e1fdf3"
+  },
+  "yellow": {
+    "500": "#714601",
+    "default": "#febe14",
+    "300": "#ffebb3",
+    "200": "#fdf7e7"
   }
 }
