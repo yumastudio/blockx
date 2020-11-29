@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+html, body{
+  height: 100%;
+}
+
+html, body, code{
+  font-family: theme('fontFamily.default');
+  font-weight: theme('fontWeight.400');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  color: theme('colors.black.300');
+  font-size: theme('fontSize.body-2');
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+b{
+  font-weight: theme('fontWeight.600');
+}
+
+ul, ol{
+  padding-left: theme('spacing.3');
+}
+
+.pt-navbar{
+  padding-top: $navbarHeight;
+}
+
+.wrap{
+  width: 100%;
+  max-width: $wrapMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media screen and (min-width: theme('screens.small')){
+  .wrap{
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: theme('screens.large')){
+  .wrap{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

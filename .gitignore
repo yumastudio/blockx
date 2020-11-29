@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+yarn.lock
+yarn-error.log
+dist
+.next
+__generated__
+package-lock.json
+package.json

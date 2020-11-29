@@ -1,0 +1,13 @@
+{
+  "transparent": "transparent",
+  "white": "#fff",
+  "black": {
+    "default": "rgb(47, 48, 51)",
+    "300": "rgb(103, 109, 115)"
+  },
+  "gray": {
+    "default": "rgb(211, 212, 213)",
+    "300": "rgb(233, 236, 237)",
+    "200": "rgb(250, 250, 250)"
+  }
+}

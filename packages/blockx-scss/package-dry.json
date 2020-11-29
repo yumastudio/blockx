@@ -1,0 +1,52 @@
+{
+  "name": "@yumastudio/blockx-scss",
+  "version": "0.2.1",
+  "description": "SCSS files for building Yuma UI.",
+  "homepage": "https://github.com/yumastudio/blockx/tree/master/packages/blockx-scss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumastudio/blockx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yumastudio/blockx/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "author": "Gabriel Sebag <hello@gabrielsebag.com>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "scss",
+    "css",
+    "sass"
+  ],
+  "main": "dist/styles.css",
+  "files": [
+    "dist",
+    "config",
+    "tailwind.config.js",
+    "package-dry.json",
+    "src",
+    "postcss.config.js"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clear": "rm -rf dist",
+    "init": "mkdir -p dist",
+    "build:css": "node-sass -q src/index.scss dist/styles.css && postcss dist/styles.css --map --replace",
+    "build": "npm run clear && npm run init && npm run build:css",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No test specified\""
+  },
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "cssnano": "4.1.10",
+    "node-sass": "5.0.0",
+    "postcss-cli": "8.3.0",
+    "tailwindcss": "1.9.6"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
