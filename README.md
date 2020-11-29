@@ -3,7 +3,9 @@
 <p align="left">
   <img width="300" src="https://i.ibb.co/DR7Mhzt/blockx.jpg" alt="Blockx cover" />
 </p>
+
 Blockx is the design system at Yuma. Though its primary purpose to support Yuma projects, we have open-sourced it for those interested in how we build and manage our design system.
+
 ## Overview
 
 The Blockx codebase is a monorepo containing individually versioned NPM packages. These packages include:
