@@ -1,0 +1,66 @@
+{
+  "name": "@yumastudio/blockx-icons",
+  "version": "0.0.2",
+  "description": "A scalable set of icons handcrafted with <3 by Yuma.",
+  "homepage": "https://github.com/yumastudio/blockx/tree/master/packages/blockx-icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumastudio/blockx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yumastudio/blockx/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "author": "Gabriel Sebag <hello@gabrielsebag.com>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "icons",
+    "svg",
+    "react"
+  ],
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "scripts",
+    "src/index.js",
+    "babel.config.js",
+    "package-dry.json",
+    "rollup.config.js"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build:svgs": "scripts/svgs.js --input icons/**/*.svg --output src/__generated__/data.json",
+    "build:react": "scripts/react.js --input src/__generated__ --output=dist",
+    "build:js": "rollup -c",
+    "build": "npm run build:svgs && npm run build:react && npm run build:js",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No test specified\""
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.7",
+    "@babel/preset-env": "7.12.7",
+    "@babel/preset-react": "7.12.7",
+    "@rollup/plugin-babel": "5.2.1",
+    "@rollup/plugin-commonjs": "15.1.0",
+    "cheerio": "1.0.0-rc.3",
+    "fs-extra": "6.0.1",
+    "globby": "11.0.0",
+    "lodash.merge": "4.6.2",
+    "rollup": "2.33.3",
+    "trim-newlines": "3.0.0",
+    "typescript": "3.8.3",
+    "yargs": "15.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
