@@ -11,7 +11,8 @@ import { dependencies, peerDependencies } from './package.json';
 const resolveOnly = [
   "@yumastudio/blockx-icons",
   "intersection-observer",
-  "object-fit-images"
+  "object-fit-images",
+  "style-inject"
 ]
 
 const formats = [{
@@ -53,9 +54,7 @@ const formats = [{
       modules: true,
       use: ['sass'],
     }),
-    nodeResolve({
-      resolveOnly
-    }),
+    nodeResolve(),
     commonjs()
   ],
   external: id =>
