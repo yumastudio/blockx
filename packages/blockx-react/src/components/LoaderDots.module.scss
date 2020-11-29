@@ -1,0 +1,92 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+@keyframes tp-loader-animation-1 {
+  0%,
+  70%,
+  100% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes tp-loader-animation-2 {
+  0%,
+  15%,
+  85%,
+  100% {
+    opacity: 0.2;
+  }
+  45% {
+    opacity: 1;
+  }
+}
+
+@keyframes tp-loader-animation-3 {
+  0%,
+  30%,
+  100% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+.dot {
+  border-radius: theme('borderRadius.full');
+  animation: tp-loader-animation-1 1.3s infinite ease-in;
+  opacity: 0;
+  -moz-transform: rotate(0.1deg); // Fixes small rendering bug in FF;
+
+  &SizeSmall {
+    width: 8px;
+    height: 8px;
+    &:nth-child(2) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+  &SizeMedium {
+    width: 16px;
+    height: 16px;
+    &:nth-child(2) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  &Theme{
+    &Brand {
+      background-color: theme('colors.orange.default');
+    }
+    &Inverse {
+      background-color: theme('colors.white');
+    }
+    &Muted {
+      background-color: theme('colors.black.300');
+    }
+  }
+
+  &:nth-child(2) {
+    animation-name: tp-loader-animation-2;
+  }
+  &:nth-child(3) {
+    animation-name: tp-loader-animation-3;
+  }
+}
+
+.hiddenText {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}

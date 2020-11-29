@@ -1,0 +1,94 @@
+.checkbox {
+  position: relative;
+  display: flex;
+
+  &VerticalAlignTop {
+    align-items: flex-start;
+  }
+
+  &VerticalAlignCenter {
+    align-items: center;
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+
+  &:focus ~ .checkboxImage {
+    box-shadow: 0 0 0px 4px theme("colors.gray.300");
+  }
+}
+
+.checkboxImage {
+  width: 20px;
+  height: 20px;
+  border-radius: theme("borderRadius.default");
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+
+  // Margin that makes the input appear decently aligned against
+  // various Thumbprint <Text> sizes
+  .checkboxVerticalAlignTop & {
+    margin-top: 1px;
+  }
+
+  &State{
+    &Error{
+      color: theme('colors.red.default');
+      border-color: theme('colors.red.default');
+      background-color: theme('colors.white.default');
+    }
+    &Disabled{
+      color: theme('colors.gray.default');
+      border-color: theme('colors.gray.300');
+      background-color: theme('colors.gray.200');
+    }
+    &Default{
+      &Unchecked{
+        color: inherit;
+        border-color: theme('colors.gray.default');
+        background-color: theme('colors.white');
+      }
+      &Checked{
+        color: theme('colors.white');
+        border-color: theme('colors.blue.default');
+        background-color: theme('colors.blue.default');
+      }
+      &Indeterminate{
+        color: theme('colors.white');
+        border-color: theme('colors.blue.default');
+        background-color: theme('colors.blue.default');
+      }
+    }
+  }
+}
+
+.text {
+  // This must take up the remaining available space for content that must be right-aligned.
+  flex: 1 0 0%;
+  // 'min-width' is needed to allow text within the checkbox to truncate.
+  min-width: 0;
+  font-size: theme("fontSize.body-2");
+  font-weight: 400;
+  padding-left: 8px;
+
+  &State{
+    &Error{
+      color: theme('colors.red.default');
+    }
+    &Disabled{
+      color: theme('colors.gray.default');
+    }
+    &Default{
+      color: inherit;
+    }
+  }
+}

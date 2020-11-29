@@ -1,0 +1,90 @@
+.select {
+  // Vendor prefixes are needed to work around a bug in Gatsby, the framework that powers our
+  // documentation site, so that the component doesn't appear broken on our documentation.
+  // https://github.com/thumbtack/thumbprint-archive/issues/899
+  // https://github.com/gatsbyjs/gatsby/issues/1347
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: 1px solid;
+  border-radius: theme('borderRadius.default');
+  outline: none;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: auto 18px;
+  padding-left: 14px;
+  padding-right: 54px;
+  width: 100%;
+
+  &:focus {
+    border-color: theme('colors.blue.default');
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 theme('colors.black.default');
+  }
+
+  &State {
+    &Disabled {
+      background-color: theme('colors.gray.200');
+      border-color: theme('colors.gray.default');
+      color: theme('colors.black.200');
+    }
+
+    &Error {
+      background-color: theme('colors.white');
+      border-color: theme('colors.red.default');
+      color: theme('colors.red.default');
+
+      &:focus {
+        border-color: theme('colors.red.default');
+      }
+    }
+
+    &Default {
+      background-color: theme('colors.white');
+      border-color: theme('colors.gray.default');
+      color: theme('colors.black.default');
+    }
+  }
+
+  &Size {
+    &Large {
+      height: 52px;
+      font-size: theme("fontSize.body-2");
+    }
+
+    &Small {
+      height: 40px;
+      font-size: theme("fontSize.body-3");
+    }
+  }
+}
+
+.caret {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  pointer-events: none;
+
+  &State{
+    &Default{
+      stroke: theme("colors.black.default");
+    }
+    &Disabled{
+      stroke: theme("colors.gray.default");
+    }
+    &Error{
+      stroke: theme("colors.red.default");
+    }
+  }
+}

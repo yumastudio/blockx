@@ -1,0 +1,20 @@
+.picture {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  height: inherit;
+}
+
+.image{
+  height: inherit;
+
+  &Start {
+    display: block;
+    width: 100%;
+    opacity: 0;
+  }
+
+  &End {
+    opacity: 1;
+  }
+}

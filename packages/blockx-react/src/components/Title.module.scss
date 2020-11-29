@@ -1,0 +1,50 @@
+.title1, .title2, .title3, .title4, .title5, .title6, .title7, .title8{
+  color: theme('colors.black.default');
+}
+.title1{
+  font-size: theme('fontSize.title-1m');
+  line-height: theme('lineHeight.title-1m');
+}
+.title2{
+  font-size: theme('fontSize.title-2m');
+  line-height: theme('lineHeight.title-2m');
+}
+.title3{
+  font-size: theme('fontSize.title-3m');
+  line-height: theme('lineHeight.title-3m');
+}
+.title4{
+  font-size: theme('fontSize.title-4');
+  line-height: theme('lineHeight.title-4');
+}
+.title5{
+  font-size: theme('fontSize.title-5');
+  line-height: theme('lineHeight.title-5');
+}
+.title6{
+  font-size: theme('fontSize.title-6');
+  line-height: theme('lineHeight.title-6');
+}
+.title7{
+  font-size: theme('fontSize.title-7');
+  line-height: theme('lineHeight.title-7');
+}
+.title8{
+  font-size: theme('fontSize.title-8');
+  line-height: theme('lineHeight.title-8');
+}
+
+@media screen and (min-width: theme("screens.medium")){
+  .title1{
+    font-size: theme('fontSize.title-1');
+    line-height: theme('lineHeight.title-1');
+  }
+  .title2{
+    font-size: theme('fontSize.title-2');
+    line-height: theme('lineHeight.title-2');
+  }
+  .title3{
+    font-size: theme('fontSize.title-3');
+    line-height: theme('lineHeight.title-3');
+  }
+}

@@ -1,0 +1,11 @@
+.inputNote{
+  color: theme('colors.black.300');
+  font-size: theme('fontSize.body-4');
+  line-height: theme('lineHeight.body-4');
+
+  &State {
+    &Error {
+      color: theme('colors.red.default');
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.alert {
+  display: flex;
+  font-size: theme('fontSize.body-3');
+  line-height: theme('lineHeight.body-3');
+  text-align: left;
+  // Padding top and bottom of 12px to achieve 44px height of alert
+  padding: 12px theme('spacing.3');
+  color: theme('colors.white');
+  background: theme('colors.gray.default');
+  font-weight: 700;
+  border-radius: theme('borderRadius.default');
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: theme('colors.white');
+    fill: theme('colors.white');
+
+    &:hover {
+      color: theme('colors.white');
+      opacity: 0.7;
+    }
+  }
+
+  &State{
+    &Success{
+      background: theme('colors.green.default');
+    }
+    &Caution{
+      background: theme('colors.red.default');
+    }
+    &Warning{
+      background: theme('colors.yellow.300');
+      color: theme('colors.orange.500');
+
+      a,
+      a:hover {
+        color: theme('colors.orange.500');
+        fill: theme('colors.orange.500');
+      }
+    }
+    &Info{
+      background: theme('colors.blue.default');
+    }
+  }
+}
+
+.text {
+  align-self: center;
+}
+
+.icon {
+  fill: currentColor;
+  flex: none;
+  // Margin right of 12px to align with the padding top and bottom
+  margin-right: 12px;
+  position: relative;
+  // aligns the icons optically
+  top: -1px;
+}

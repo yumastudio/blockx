@@ -1,0 +1,166 @@
+$button-height-large: 52px;
+$button-height-small: 40px;
+$button-border-width: 2px;
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  overflow: hidden;
+
+  &HasRightChildren {
+    margin-right: 12px;
+  }
+  &HasLeftChildren {
+    margin-left: 12px;
+  }
+}
+
+.flexWrapper {
+  // This wraps the content since `button`s are not able to use `display: flex`.
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Size{
+    &Large {
+      min-height: $button-height-large - ($button-border-width * 2);
+      line-height: theme('lineHeight.body-2');
+      font-size: theme('fontSize.body-2');
+    }
+    &Small {
+      min-height: $button-height-small - ($button-border-width * 2);
+      line-height: theme('lineHeight.body-3');
+      font-size: theme('fontSize.body-3');
+    }
+  }
+
+  &::after {
+    // Fix bug in IE 11 with `align-items: center` and `min-height`.
+    // https://github.com/philipwalton/flexbugs/issues/231
+    content: '';
+    display: block;
+    min-height: inherit;
+    font-size: 0;
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: inherit;
+  border-width: $button-border-width;
+  border-style: solid;
+  font-weight: 700;
+  user-select: none;
+  padding: 0 22px;
+  position: relative;
+  overflow: visible;
+  border-radius: theme('borderRadius.default');
+
+  &HasNoRightBorder {
+    border-right: none;
+  }
+
+  &ThemePrimary {
+    color: theme('colors.white');
+    background-color: theme('colors.orange.default');
+    border-color: theme('colors.orange.default');
+
+    &[disabled] {
+      background-color: theme('colors.orange.300');
+      border-color: theme('colors.orange.300');
+    }
+
+    &:focus {
+      background-color: theme('colors.orange.500');
+      border-color: theme('colors.orange.500');
+    }
+  }
+
+  &ThemeSecondary {
+    color: theme('colors.orange.default');
+    background-color: theme('colors.white');
+    border-color: theme('colors.gray.default');
+
+    &[disabled] {
+      color: theme('colors.orange.300');
+    }
+
+    &:focus {
+      border-color: theme('colors.orange.500');
+    }
+  }
+
+  &ThemeTertiary {
+    color: theme('colors.black.300');
+    background-color: theme('colors.white');
+    border-color: theme('colors.gray.default');
+
+    &[disabled] {
+      color: theme('colors.gray.default');
+    }
+
+    &:focus {
+      border-color: theme('colors.black.300');
+    }
+  }
+
+  &ThemeCaution {
+    color: theme('colors.red.default');
+    background-color: theme('colors.white');
+    border-color: theme('colors.gray.default');
+
+    &[disabled] {
+      color: theme('colors.red.300');
+    }
+
+    &:focus {
+      color: theme('colors.red.500');
+      border-color: theme('colors.red.500');
+    }
+  }
+
+  &ThemeSolid {
+    color: theme('colors.black.default');
+    background-color: theme('colors.white');
+    border-color: theme('colors.white');
+
+    &[disabled] {
+      color: theme('colors.gray.default');
+      background-color: 'rgba(255, 255, 255, 0.5)';
+      border-color: 'transparent';
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:not([disabled]) {
+    cursor: pointer;
+
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+  }
+}

@@ -1,0 +1,116 @@
+.radio {
+  position: relative;
+  display: flex;
+
+  &VerticalAlignTop {
+    align-items: flex-start;
+  }
+
+  &VerticalAlignCenter {
+    align-items: center;
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+
+  &:focus ~ .circle {
+    box-shadow: 0 0 0px 4px theme('colors.gray.300');
+  }
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: theme('borderRadius.full');
+
+  // Margin that makes the input appear decently aligned against
+  // various Thumbprint <Text> sizes
+  .radioVerticalAlignTop & {
+    margin-top: 1px;
+  }
+
+  .radioVerticalAlignCenter & {
+    margin-top: -1px;
+  }
+
+  &Border{
+    &State{
+      &Disabled{
+        stroke: theme('colors.gray.300');
+      }
+      &Checked{
+        stroke: theme('colors.blue.default');
+      }
+      &Unchecked{
+        stroke: theme('colors.gray.default');
+      }
+      &Error{
+        stroke: theme('colors.red.default');
+      }
+    }
+  }
+
+  &Background{
+    &State{
+      &Disabled{
+        fill: theme('colors.gray.200');
+      }
+      &Checked{
+        fill: theme('colors.white');
+      }
+      &Unchecked{
+        fill: theme('colors.white');
+      }
+      &Error{
+        fill: theme('colors.white');
+      }
+    }
+  }
+
+  &Radio{
+    &State{
+      &Disabled{
+        fill: theme('colors.gray.default');
+      }
+      &Checked{
+        fill: theme('colors.blue.default');
+      }
+      &Unchecked{
+        fill: transparent;
+      }
+      &Error{
+        fill: theme('colors.red.default');
+      }
+    }
+  }
+}
+
+.text {
+  // This must take up the remaining available space for content that must be right-aligned.
+  flex: 1 0 0%;
+  // 'min-width' is needed to allow text within the radio to truncate.
+  min-width: 0;
+  font-size: theme('fontSize.body-2');
+  font-weight: 400;
+  padding-left: 8px;
+
+  &State{
+    &Disabled{
+      color: theme('colors.gray.default');
+    }
+    &Checked{
+      color: inherit;
+    }
+    &Unchecked{
+      color: inherit;
+    }
+    &Error{
+      color: theme('colors.red.default');
+    }
+  }
+}

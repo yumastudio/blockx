@@ -1,0 +1,63 @@
+.avatar {
+  position: relative;
+  font-weight: 700;
+
+  &Size{
+    &Xsmall {
+      font-size: theme("fontSize.title-8");
+    }
+    &Small {
+      font-size: theme("fontSize.title-5");
+    }
+    &Medium {
+      font-size: theme("fontSize.title-3");
+    }
+    &Large {
+      font-size: theme("fontSize.title-2");
+    }
+    &Xlarge {
+      font-size: theme("fontSize.title-1");
+    }
+  }
+
+  &Theme{
+    &1{
+      color: theme("colors.purple.500");
+      background-color: theme("colors.purple.200");
+    }
+    &2{
+      color: theme("colors.green.500");
+      background-color: theme("colors.green.200");
+    }
+    &3{
+      color: theme("colors.yellow.500");
+      background-color: theme("colors.yellow.200");
+    }
+    &4{
+      color: theme("colors.red.500");
+      background-color: theme("colors.red.200");
+    }
+    &5{
+      color: theme("colors.blue.500");
+      background-color: theme("colors.blue.200");
+    }
+  }
+}
+
+.initials {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  line-height: initial;
+  font-weight: 700;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 4px;
+}

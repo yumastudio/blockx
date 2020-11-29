@@ -1,0 +1,15 @@
+.label{
+  color: theme('colors.black.default');
+  font-size: theme('fontSize.body-2');
+  line-height: theme('lineHeight.body-2');
+  font-weight: 700;
+
+  &State {
+    &Disabled {
+      color: theme('colors.gray.default');
+    }
+    &Error {
+      color: theme('colors.red.default');
+    }
+  }
+}

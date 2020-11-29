@@ -1,0 +1,177 @@
+$border-width: 1px;
+$icon-padding: 16px;
+
+.inputContainer{
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  padding: $border-width;
+  // Prevents the z-indices used within this component from bubbling up and affecting the rest of
+  // the page. https://github.com/thumbtack/thumbprint-archive/issues/954
+  z-index: 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+  cursor: text;
+
+  &Position {
+    &Left {
+      padding-left: $icon-padding;
+    }
+  }
+}
+
+.inputStyles {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // background-color: ${props => backgroundColor[props.uiState]};
+  border: $border-width solid;
+  border-radius: theme('borderRadius.default');
+}
+
+// The '.input.input.input' element is used to increase specificity so that the selector takes
+// precedence over a highly specific selector in Thumbtack's website.
+// https://github.com/thumbtack/thumbprint-archive/issues/244
+.input {
+  border: none;
+  flex: 1 0 0%;
+  // Input elements, by default, have a 20 character min-width due to the `size` attribute.
+  // Adding `min-width: 0` allows the input to shrink below the 20 character width when needed.
+  // This only affects Firefox and Edge, normalizing the behavior across browsers.
+  min-width: 0;
+  color: inherit;
+  vertical-align: middle;
+  height: auto;
+  background: transparent;
+  border-radius: theme('borderRadius.default');
+  z-index: 2;
+  position: relative;
+  width: 100%;
+
+  &:focus {
+    // Focus styles are added to another element, not the actual input element.
+    border: none;
+    box-shadow: none;
+    color: theme('colors.black.default');
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: theme('colors.black.200');
+  }
+
+  // Remove browser default "clear" button since it should be added with "InputClearButton".
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  // Remove browser default "clear" button for IE 11. This rule needs to be separated as
+  // it fails to apply if grouped with the above `::-webkit` selectors.
+  &::-ms-clear {
+    display: none;
+  }
+
+  &Size {
+    &Large {
+      font-size: theme('fontSize.body-2');
+      line-height: theme('lineHeight.body-2');
+      padding: 13px 16px;
+    }
+    &Small {
+      font-size: theme('fontSize.body-3');
+      line-height: theme('lineHeight.body-3');
+      padding: 9px 16px;
+    }
+  }
+
+  // These two padding values prevent an overlap of the `innerLeft`/`innerRight` icon and the
+  // input itself which can happen when the autofill functionality adds a backgroun-color to
+  // the input.
+  &.inputWithIconLeft {
+    padding-left: 12px;
+  }
+}
+
+.textInput {
+  &State {
+    &Default {
+      color: theme('colors.black.default');
+
+      .inputStyles {
+        background-color: theme('colors.white');
+        border-color: theme('colors.gray.default');
+      }
+    }
+
+    &Readonly {
+      color: theme('colors.black.default');
+
+      .inputStyles {
+        background-color: theme('colors.white');
+        border-color: theme('colors.gray.default');
+      }
+    }
+
+    &Disabled {
+      color: theme('colors.gray.default');
+
+      .inputStyles {
+        background-color: theme('colors.gray.200');
+        border-color: theme('colors.gray.default');
+      }
+    }
+
+    &Error {
+      color: theme('colors.red.default');
+
+      .inputStyles {
+        background-color: theme('colors.white');
+        border-color: theme('colors.red.default');
+      }
+
+      .input{
+        // This must be three separate rules, not a comma-separated list, to avoid the different
+        // vendor prefixes conflicting.
+        &::-webkit-input-placeholder {
+          color: theme('colors.red.default');
+        }
+
+        &::-moz-placeholder {
+          color: theme('colors.red.default');
+        }
+
+        &:-ms-input-placeholder {
+          color: theme('colors.red.default');
+        }
+      }
+    }
+
+    &Default{
+      .input:focus {
+        & ~ .inputStyles {
+          border-color: theme('colors.blue.default');
+        }
+      }
+    }
+
+    &Readonly, &Disabled, .icon{
+      .input, .icon{
+        cursor: default;
+      }
+    }
+  }
+}

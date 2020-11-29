@@ -1,0 +1,60 @@
+.bannerAlert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: theme('spacing.3');
+  color: theme('colors.black.default');
+  background-color: theme('colors.gray.200');
+  font-size: theme('fontSize.body-3');
+  line-height: theme('lineHeight.body-3');
+
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+    color: theme('colors.black.default');
+  }
+
+  &State{
+    &Info{
+      background-color: theme('colors.blue.200');
+      color: theme('colors.blue.500');
+
+      a {
+        color: theme('colors.blue.500');
+      }
+    }
+    &Warning{
+      background-color: theme('colors.sorbet.200');
+      color: theme('colors.orange.500');
+
+      a {
+        color: theme('colors.orange.500');
+      }
+    }
+    &Caution{
+      background-color: theme('colors.red.200');
+      color: theme('colors.red.500');
+
+      a {
+        color: theme('colors.red.500');
+      }
+    }
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-right: theme('spacing.3');
+}
+
+@media screen and (min-width: theme('screens.small')){
+  .bannerAlert{
+    padding: theme('spacing.4');
+    font-size: theme('fontSize.body-2');
+    line-height: theme('lineHeight.body-2');
+  }
+
+  .icon{
+    margin-right: theme('spacing.3');
+  }
+}
