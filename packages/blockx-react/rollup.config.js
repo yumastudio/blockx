@@ -8,13 +8,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 import { dependencies, peerDependencies } from './package.json';
 
-const resolveOnly = [
-  "@yumastudio/blockx-icons",
-  "intersection-observer",
-  "object-fit-images",
-  "style-inject"
-]
-
 const formats = [{
   name: 'es',
   preserveModules: true,
@@ -24,9 +17,8 @@ const formats = [{
       typescript: require('typescript')
     }),
     babel(),
-    nodeResolve({
-      resolveOnly
-    }),
+    nodeResolve(),
+    commonjs(),
     copy({
       files: ['**/*.scss', '**/*.css', '!dist/**'],
       dest: path.join('dist', 'es'),

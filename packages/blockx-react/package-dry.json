@@ -24,8 +24,12 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "components",
-    "index.tsx"
+    "babel.config.json",
+    "package-dry.json",
+    "postcss.config.js",
+    "rollup.config.js",
+    "tailwind.config.js",
+    "tsconfig.json"
   ],
   "sideEffects": false,
   "scripts": {
@@ -48,9 +52,7 @@
     "object-fit-images": "3.2.4",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-onclickoutside": "6.9.0",
     "react-popper": "2.2.4",
-    "react-swipeable": "6.0.0",
     "warning": "4.0.3"
   },
   "devDependencies": {
@@ -79,15 +81,11 @@
   },
   "peerDependencies": {
     "@popperjs/core": "2.5.4",
-    "@yumastudio/blockx-scss": "0.2.2",
     "classnames": "2.2.6",
     "lodash": "4.17.20",
-    "no-scroll": "2.1.1",
     "react": ">=16",
     "react-dom": ">=16",
-    "react-onclickoutside": "6.9.0",
     "react-popper": "2.2.4",
-    "react-swipeable": "6.0.0",
     "warning": "4.0.3"
   },
   "engines": {
